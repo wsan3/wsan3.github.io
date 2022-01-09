@@ -1,190 +1,174 @@
-/*
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+/**
+ * Template Name: iPortfolio - v1.2.0
+ * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+ * Author: BootstrapMade.com
+ * License: https://bootstrapmade.com/license/
+ */
+!(function($) {
+    "use strict";
 
-(function($) {
+    // Hero typed
+    if ($('.typed').length) {
+        var typed_strings = $(".typed").data('typed-items');
+        typed_strings = typed_strings.split(',')
+        new Typed('.typed', {
+            strings: typed_strings,
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 50,
+            backDelay: 2000
+        });
+    }
 
-	var	$window = $(window),
-		$body = $('body'),
-		$sidebar = $('#sidebar');
+    // Smooth scroll for the navigation menu and links with .scrollto classes
+    $(document).on('click', '.nav-menu a, .scrollto', function(e) {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            e.preventDefault();
+            var target = $(this.hash);
+            if (target.length) {
 
-	// Breakpoints.
-		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ null,      '480px'  ]
-		});
+                var scrollto = target.offset().top;
 
-	// Hack: Enable IE flexbox workarounds.
-		if (browser.name == 'ie')
-			$body.addClass('is-ie');
+                $('html, body').animate({
+                    scrollTop: scrollto
+                }, 1500, 'easeInOutExpo');
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+                if ($(this).parents('.nav-menu, .mobile-nav').length) {
+                    $('.nav-menu .active, .mobile-nav .active').removeClass('active');
+                    $(this).closest('li').addClass('active');
+                }
 
-	// Forms.
+                if ($('body').hasClass('mobile-nav-active')) {
+                    $('body').removeClass('mobile-nav-active');
+                    $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+                }
+                return false;
+            }
+        }
+    });
 
-		// Hack: Activate non-input submits.
-			$('form').on('click', '.submit', function(event) {
+    $(document).on('click', '.mobile-nav-toggle', function(e) {
+        $('body').toggleClass('mobile-nav-active');
+        $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+    });
 
-				// Stop propagation, default.
-					event.stopPropagation();
-					event.preventDefault();
+    $(document).click(function(e) {
+        var container = $(".mobile-nav-toggle");
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            if ($('body').hasClass('mobile-nav-active')) {
+                $('body').removeClass('mobile-nav-active');
+                $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+            }
+        }
+    });
 
-				// Submit form.
-					$(this).parents('form').submit();
+    // Navigation active state on scroll
+    var nav_sections = $('section');
+    var main_nav = $('.nav-menu, #mobile-nav');
 
-			});
+    $(window).on('scroll', function() {
+        var cur_pos = $(this).scrollTop() + 10;
 
-	// Sidebar.
-		if ($sidebar.length > 0) {
+        nav_sections.each(function() {
+            var top = $(this).offset().top,
+                bottom = top + $(this).outerHeight();
+            if (cur_pos >= top && cur_pos <= bottom) {
+                if (cur_pos <= bottom && $(this).attr('id') != "noChange") {
+                    main_nav.find('li').removeClass('active');
+                }
+                main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
+            }
+        });
+    });
 
-			var $sidebar_a = $sidebar.find('a');
+    // Back to top button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('.back-to-top').fadeIn('slow');
+        } else {
+            $('.back-to-top').fadeOut('slow');
+        }
+    });
 
-			$sidebar_a
-				.addClass('scrolly')
-				.on('click', function() {
+    $('.back-to-top').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 1500, 'easeInOutExpo');
+        return false;
+    });
 
-					var $this = $(this);
+    // jQuery counterUp
+    $('[data-toggle="counter-up"]').counterUp({
+        delay: 10,
+        time: 1000
+    });
 
-					// External link? Bail.
-						if ($this.attr('href').charAt(0) != '#')
-							return;
+    // Skills section
+    $('.skills-content').waypoint(function() {
+        $('.progress .progress-bar').each(function() {
+            $(this).css("width", $(this).attr("aria-valuenow") + '%');
+        });
+    }, {
+        offset: '80%'
+    });
 
-					// Deactivate all links.
-						$sidebar_a.removeClass('active');
+    // Porfolio isotope and filter
+    $(window).on('load', function() {
+        var portfolioIsotope = $('.portfolio-container').isotope({
+            itemSelector: '.portfolio-item',
+            layoutMode: 'fitRows'
+        });
 
-					// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
-						$this
-							.addClass('active')
-							.addClass('active-locked');
+        $('#portfolio-flters li').on('click', function() {
+            $("#portfolio-flters li").removeClass('filter-active');
+            $(this).addClass('filter-active');
 
-				})
-				.each(function() {
+            portfolioIsotope.isotope({
+                filter: $(this).data('filter')
+            });
+        });
 
-					var	$this = $(this),
-						id = $this.attr('href'),
-						$section = $(id);
+        // Initiate venobox (lightbox feature used in portofilo)
+        $(document).ready(function() {
+            $('.venobox').venobox();
+        });
+    });
 
-					// No section for this link? Bail.
-						if ($section.length < 1)
-							return;
+    // Testimonials carousel (uses the Owl Carousel library)
+    $(".testimonials-carousel").owlCarousel({
+        autoplay: true,
+        dots: true,
+        loop: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 2
+            },
+            900: {
+                items: 3
+            }
+        }
+    });
 
-					// Scrollex.
-						$section.scrollex({
-							mode: 'middle',
-							top: '-20vh',
-							bottom: '-20vh',
-							initialize: function() {
+    $(".clickable").click(function() {
+        window.location = $(this).attr("data-href");
+        return false;
+    });
 
-								// Deactivate section.
-									$section.addClass('inactive');
+    // Portfolio details carousel
+    $(".portfolio-details-carousel").owlCarousel({
+        autoplay: true,
+        dots: true,
+        loop: true,
+        items: 1
+    });
 
-							},
-							enter: function() {
-
-								// Activate section.
-									$section.removeClass('inactive');
-
-								// No locked links? Deactivate all links and activate this section's one.
-									if ($sidebar_a.filter('.active-locked').length == 0) {
-
-										$sidebar_a.removeClass('active');
-										$this.addClass('active');
-
-									}
-
-								// Otherwise, if this section's link is the one that's locked, unlock it.
-									else if ($this.hasClass('active-locked'))
-										$this.removeClass('active-locked');
-
-							}
-						});
-
-				});
-
-		}
-
-	// Scrolly.
-		$('.scrolly').scrolly({
-			speed: 1000,
-			offset: function() {
-
-				// If <=large, >small, and sidebar is present, use its height as the offset.
-					if (breakpoints.active('<=large')
-					&&	!breakpoints.active('<=small')
-					&&	$sidebar.length > 0)
-						return $sidebar.height();
-
-				return 0;
-
-			}
-		});
-
-	// Spotlights.
-		$('.spotlights > section')
-			.scrollex({
-				mode: 'middle',
-				top: '-10vh',
-				bottom: '-10vh',
-				initialize: function() {
-
-					// Deactivate section.
-						$(this).addClass('inactive');
-
-				},
-				enter: function() {
-
-					// Activate section.
-						$(this).removeClass('inactive');
-
-				}
-			})
-			.each(function() {
-
-				var	$this = $(this),
-					$image = $this.find('.image'),
-					$img = $image.find('img'),
-					x;
-
-				// Assign image.
-					$image.css('background-image', 'url(' + $img.attr('src') + ')');
-
-				// Set background position.
-					if (x = $img.data('position'))
-						$image.css('background-position', x);
-
-				// Hide <img>.
-					$img.hide();
-
-			});
-
-	// Features.
-		$('.features')
-			.scrollex({
-				mode: 'middle',
-				top: '-20vh',
-				bottom: '-20vh',
-				initialize: function() {
-
-					// Deactivate section.
-						$(this).addClass('inactive');
-
-				},
-				enter: function() {
-
-					// Activate section.
-						$(this).removeClass('inactive');
-
-				}
-			});
+    // Initi AOS
+    AOS.init({
+        duration: 1000,
+        easing: "ease-in-out-back"
+    });
 
 })(jQuery);
