@@ -24,6 +24,26 @@ a:hover {
     text-decoration: none;
 }
 
+/* Make links in about section blue */
+.about .content a {
+    color: #007bff;
+}
+
+.about .content a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Make links in resume section blue */
+.resume .section-title a {
+    color: #007bff;
+}
+
+.resume .section-title a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
 h1,
 h2,
 h3,
@@ -419,6 +439,7 @@ section {
 
 .about .content ul li {
     padding-bottom: 10px;
+    white-space: nowrap;
 }
 
 .about .content ul i {
