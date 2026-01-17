@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostgreSQL Row Level Security - Chefbooks - Win San</title>
+    
+    <meta property="og:title" content="PostgreSQL Row Level Security - Chefbooks - Win San">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Database-level access control for multi-tenant data isolation in serverless environments">
+    <meta property="og:image" content="https://wsan3.github.io/assets/img/profile-480.jpeg">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <script src="../../assets/js/carousel.js" defer></script>
+    <div class="container">
+        <main class="main">
+            <nav class="breadcrumbs">
+                <a href="../../index.html" class="breadcrumb-link">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="../chefbooks.html" class="breadcrumb-link">Chefbooks</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">PostgreSQL Row Level Security</span>
+            </nav>
+            
+            <h1 class="detail-title">PostgreSQL Row Level Security</h1>
+            
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <img src="../../assets/img/chefbooks/chefbooks-1.png" alt="Row Level Security" class="carousel-image active">
+                    <img src="../../assets/img/chefbooks/chefbooks-2.png" alt="Security architecture" class="carousel-image">
+                </div>
+                <div class="carousel-counter">
+                    <button class="carousel-counter-arrow carousel-counter-prev" aria-label="Previous">←</button>
+                    <span class="carousel-counter-text"><span class="carousel-current">1</span> / <span class="carousel-total">2</span></span>
+                    <button class="carousel-counter-arrow carousel-counter-next" aria-label="Next">→</button>
+                </div>
+            </div>
+            
+            <div class="detail-content" style="font-size: 0.9rem;">
+                <h2>Database-Level Access Control with Row Level Security</h2>
+                
+                <p>
+                    I implemented fine-grained access control for multi-tenant data using PostgreSQL's Row Level Security (RLS), ensuring users can only access their own recipes at the database level—not just through application logic.
+                </p>
+                
+                <p>
+                    This adds a strong layer of defense in depth. Even if there's a bug or oversight in the app code, the database still enforces data isolation. It was a valuable lesson in designing secure architectures for serverless environments, where traditional middleware-based authorization doesn't always apply.
+                </p>
+                
+                <p>
+                    RLS policies automatically scope queries based on the authenticated user context from Supabase JWTs, making access control both secure and transparent to the application code.
+                </p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

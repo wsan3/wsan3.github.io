@@ -4,22 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>21 Questions - Card Games - Win San</title>
+    
+    <meta property="og:title" content="21 Questions - Card Games - Win San">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wsan3.github.io/work/21-questions.html">
+    <meta property="og:description" content="21 Questions is a mobile app featuring interactive card games for social gatherings">
+    <meta property="og:image" content="https://wsan3.github.io/assets/img/profile-480.jpeg">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <script src="../assets/js/scroll-position.js"></script>
+    <script src="../assets/js/carousel.js" defer></script>
+    <script src="../assets/js/collapsible.js" defer></script>
     <div class="container">
         <main class="main">
-            <a href="../index.html" class="back-link">← Back</a>
+            <nav class="breadcrumbs">
+                <a href="../index.html" class="breadcrumb-link">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">21 Questions</span>
+            </nav>
             
             <h1 class="detail-title">21 Questions - Card Games</h1>
+            <p class="project-date">2023-08 to Present</p>
             
-            <div class="detail-content">
-                <p>Content coming soon...</p>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <img src="../assets/img/21-questions/21-questions-1.png" alt="21 Questions screenshot 1" class="carousel-image active">
+                    <img src="../assets/img/21-questions/21-questions-2.png" alt="21 Questions screenshot 2" class="carousel-image">
+                    <img src="../assets/img/21-questions/21-questions-3.png" alt="21 Questions screenshot 3" class="carousel-image">
+                    <img src="../assets/img/21-questions/21-questions-4.png" alt="21 Questions screenshot 4" class="carousel-image">
+                </div>
+                <div class="carousel-counter">
+                    <button class="carousel-counter-arrow carousel-counter-prev" aria-label="Previous">←</button>
+                    <span class="carousel-counter-text"><span class="carousel-current">1</span> / <span class="carousel-total">4</span></span>
+                    <button class="carousel-counter-arrow carousel-counter-next" aria-label="Next">→</button>
+                </div>
             </div>
+            
+            <div class="project-intro">
+                <p class="intro-text">21 Questions is a mobile app featuring interactive card games for social gatherings</p>
+                
+                <ul class="feature-list">
+                    <li>400,000+ installs on iOS and Android</li>
+                    <li>150,000+ followers across social media platforms</li>
+                    <li>15M+ monthly views from strategic content marketing</li>
+                </ul>
+                
+                <div class="project-links">
+                    <a href="https://21questions.app" target="_blank" class="project-link">21questions.app</a>
+                    <a href="https://apps.apple.com/us/app/21-questions-card-games/id6451004192" target="_blank" class="project-link">iOS App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.twentyonequestions&hl=en_US&gl=US" target="_blank" class="project-link">Google Play Store</a>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <p class="section-title">Tech Stack</p>
+                <ul class="bullet-list collapsible-list">
+                    <li class="collapsible-item">
+                        <div class="collapsible-header">
+                            <span class="collapse-indicator">›</span>
+                            <span class="item-title">React Native, TypeScript, Expo</span>
+                        </div>
+                        <div class="collapsible-content">
+                            <span class="item-date">Frontend</span>
+                            <p class="item-description">Cross-platform mobile development enabling rapid deployment to both iOS and Android with shared codebase.</p>
+                        </div>
+                    </li>
+                    <li class="collapsible-item">
+                        <div class="collapsible-header">
+                            <span class="collapse-indicator">›</span>
+                            <span class="item-title">Firebase Firestore</span>
+                        </div>
+                        <div class="collapsible-content">
+                            <span class="item-date">Backend</span>
+                            <p class="item-description">Real-time database for syncing game content and delivering dynamic updates to users.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <p class="section-title">Key Accomplishments</p>
+                <ul class="bullet-list">
+                    <li>
+                        <div class="item-header">
+                            <a href="21-questions/social-media-growth.html">Social Media Growth</a>
+                        </div>
+                        <p class="item-description">Built and scaled social media presence to 150,000+ followers, generating 15M+ monthly views through strategic content marketing and audience engagement.</p>
+                    </li>
+                    <li>
+                        <div class="item-header">
+                            <a href="21-questions/ab-testing-monetization.html">A/B Testing & Monetization</a>
+                        </div>
+                        <p class="item-description">Ran comprehensive A/B tests with different paywalls and subscription models, achieving a 43% increase in Monthly Recurring Revenue (MRR).</p>
+                    </li>
+                    <li>
+                        <div class="item-header">
+                            <a href="21-questions/user-acquisition.html">User Acquisition & Retention</a>
+                        </div>
+                        <p class="item-description">Successfully launched and scaled to 400,000+ installs across iOS and Android platforms with Firebase-powered real-time features.</p>
+                    </li>
+                </ul>
+            </section>
         </main>
     </div>
 </body>

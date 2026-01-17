@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Capability Trade-offs - Chefbooks - Win San</title>
+    
+    <meta property="og:title" content="Offline Capability Trade-offs - Chefbooks - Win San">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Strategic decision to prioritize speed-to-market over offline-first architecture complexity">
+    <meta property="og:image" content="https://wsan3.github.io/assets/img/profile-480.jpeg">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <script src="../../assets/js/carousel.js" defer></script>
+    <div class="container">
+        <main class="main">
+            <nav class="breadcrumbs">
+                <a href="../../index.html" class="breadcrumb-link">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="../chefbooks.html" class="breadcrumb-link">Chefbooks</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">Offline Capability Trade-offs</span>
+            </nav>
+            
+            <h1 class="detail-title">Offline Capability Trade-offs</h1>
+            
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <img src="../../assets/img/chefbooks/chefbooks-1.png" alt="Offline capability analysis" class="carousel-image active">
+                    <img src="../../assets/img/chefbooks/chefbooks-2.png" alt="Architecture decision" class="carousel-image">
+                </div>
+                <div class="carousel-counter">
+                    <button class="carousel-counter-arrow carousel-counter-prev" aria-label="Previous">←</button>
+                    <span class="carousel-counter-text"><span class="carousel-current">1</span> / <span class="carousel-total">2</span></span>
+                    <button class="carousel-counter-arrow carousel-counter-next" aria-label="Next">→</button>
+                </div>
+            </div>
+            
+            <div class="detail-content" style="font-size: 0.9rem;">
+                <h2>Offline-First Architecture Tradeoffs</h2>
+                
+                <p>
+                    I explored adding offline support using WatermelonDB but ultimately decided to prioritize speed-to-market over a full offline-first architecture.
+                </p>
+                
+                <p>
+                    While offline features can be powerful, they introduce significant complexity—local and remote data sync, conflict resolution, and more state management. For an MVP, that tradeoff didn't make sense, especially given that most recipe app usage happens in connected environments like home or grocery stores with Wi-Fi. Only a small percentage of apps offer truly meaningful offline functionality.
+                </p>
+                
+                <p>
+                    The key takeaway was that thoughtful feature prioritization matters more than technical perfection. Shipping a focused, reliable product quickly often delivers more value than building complex features most users won't need.
+                </p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

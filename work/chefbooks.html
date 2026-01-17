@@ -4,22 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chefbooks - Win San</title>
+    
+    <meta property="og:title" content="Chefbooks - Win San">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wsan3.github.io/work/chefbooks.html">
+    <meta property="og:description" content="Chefbooks is a mobile app that transforms social media cooking content into organized, actionable recipes with automatic grocery list generation.">
+    <meta property="og:image" content="https://wsan3.github.io/assets/img/profile-480.jpeg">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <script src="../assets/js/scroll-position.js"></script>
+    <script src="../assets/js/carousel.js" defer></script>
+    <script src="../assets/js/collapsible.js" defer></script>
     <div class="container">
         <main class="main">
-            <a href="../index.html" class="back-link">← Back</a>
+            <nav class="breadcrumbs">
+                <a href="../index.html" class="breadcrumb-link">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">Chefbooks</span>
+            </nav>
             
             <h1 class="detail-title">Chefbooks</h1>
+            <p class="project-date">2025-09 to Present</p>
             
-            <div class="detail-content">
-                <p>Content coming soon...</p>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <img src="../assets/img/chefbooks/chefbooks-1.png" alt="Chefbooks screenshot 1" class="carousel-image active">
+                    <img src="../assets/img/chefbooks/chefbooks-2.png" alt="Chefbooks screenshot 2" class="carousel-image">
+                    <img src="../assets/img/chefbooks/chefbooks-3.png" alt="Chefbooks screenshot 3" class="carousel-image">
+                    <img src="../assets/img/chefbooks/chefbooks-4.png" alt="Chefbooks screenshot 4" class="carousel-image">
+                    <img src="../assets/img/chefbooks/chefbooks-5.png" alt="Chefbooks screenshot 5" class="carousel-image">
+                </div>
+                <div class="carousel-counter">
+                    <button class="carousel-counter-arrow carousel-counter-prev" aria-label="Previous">←</button>
+                    <span class="carousel-counter-text"><span class="carousel-current">1</span> / <span class="carousel-total">5</span></span>
+                    <button class="carousel-counter-arrow carousel-counter-next" aria-label="Next">→</button>
+                </div>
             </div>
+            
+            <div class="project-intro">
+                <p class="intro-text">Chefbooks is a mobile app that transforms social media cooking content into organized, actionable recipes with automatic grocery list generation</p>
+                
+                <ul class="feature-list">
+                    <li>Save recipes from Instagram, TikTok, YouTube & websites</li>
+                    <li>Create instant grocery lists from recipe ingredients</li>
+                    <li>Organize your digital cookbook with AI-powered extraction</li>
+                    <li>Currently in beta</li>
+                </ul>
+                
+                <div class="project-links">
+                    <a href="https://chefbooks.app/" target="_blank" class="project-link">chefbooks.app</a>
+                </div>
+            </div>
+
+              <section class="content-section">
+                <p class="section-title">Tech Stack</p>
+                <ul class="bullet-list collapsible-list">
+                    <li class="collapsible-item">
+                        <div class="collapsible-header">
+                            <span class="collapse-indicator">›</span>
+                            <span class="item-title">React Native, TypeScript, Expo</span>
+                        </div>
+                        <div class="collapsible-content">
+                            <span class="item-date">Frontend</span>
+                            <p class="item-description">Cross-platform mobile development with strong typing and rapid iteration capabilities.</p>
+                        </div>
+                    </li>
+                    <li class="collapsible-item">
+                        <div class="collapsible-header">
+                            <span class="collapse-indicator">›</span>
+                            <span class="item-title">Supabase</span>
+                        </div>
+                        <div class="collapsible-content">
+                            <span class="item-date">Backend</span>
+                            <p class="item-description">PostgreSQL database, Edge Functions, and Storage for serverless backend infrastructure.</p>
+                        </div>
+                    </li>
+                    <li class="collapsible-item">
+                        <div class="collapsible-header">
+                            <span class="collapse-indicator">›</span>
+                            <span class="item-title">Apify</span>
+                        </div>
+                        <div class="collapsible-content">
+                            <span class="item-date">Web Scraping</span>
+                            <p class="item-description">Automated content extraction from Instagram, TikTok, YouTube, and recipe websites.</p>
+                        </div>
+                    </li>
+                    <li class="collapsible-item">
+                        <div class="collapsible-header">
+                            <span class="collapse-indicator">›</span>
+                            <span class="item-title">Claude Sonnet 3.5</span>
+                        </div>
+                        <div class="collapsible-content">
+                            <span class="item-date">AI/LLM</span>
+                            <p class="item-description">Recipe extraction and structured data parsing via Amazon Bedrock.</p>
+                        </div>
+                    </li>
+                    <li class="collapsible-item">
+                        <div class="collapsible-header">
+                            <span class="collapse-indicator">›</span>
+                            <span class="item-title">pgvector with gte-small</span>
+                        </div>
+                        <div class="collapsible-content">
+                            <span class="item-date">Vector Search</span>
+                            <p class="item-description">Semantic similarity search for ingredient-to-emoji matching using embeddings.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <p class="section-title">Engineering Challenges</p>
+                <ul class="bullet-list">
+                    <li>
+                        <div class="item-header">
+                            <a href="chefbooks/foundation-model-evaluation.html">Foundation Model Evaluation</a>
+                        </div>
+                        <p class="item-description">Compared 9+ LLMs to determine optimal model for recipe extraction accuracy and cost.</p>
+                    </li>
+                    <li>
+                        <div class="item-header">
+                            <a href="chefbooks/real-time-notifications.html">Real-Time Recipe Import Notifications</a>
+                        </div>
+                        <p class="item-description">Hybrid push notification and polling system for 20-60s async AI processing operations.</p>
+                    </li>
+                    <li>
+                        <div class="item-header">
+                            <a href="chefbooks/offline-capability.html">Offline Capability Trade-offs</a>
+                        </div>
+                        <p class="item-description">Strategic decision to prioritize speed-to-market over offline-first architecture complexity.</p>
+                    </li>
+                    <li>
+                        <div class="item-header">
+                            <a href="chefbooks/row-level-security.html">PostgreSQL Row Level Security</a>
+                        </div>
+                        <p class="item-description">Database-level access control for multi-tenant data isolation in serverless environments.</p>
+                    </li>
+                    <li>
+                        <div class="item-header">
+                            <a href="chefbooks/llm-prompt-engineering.html">LLM Prompt Engineering</a>
+                        </div>
+                        <p class="item-description">Structured prompts with JSON schema validation for ingredient parsing and edge case handling.</p>
+                    </li>
+                    <li>
+                        <div class="item-header">
+                            <a href="chefbooks/emoji-search-engine.html">Emoji Ingredient Search Engine</a>
+                        </div>
+                        <p class="item-description">Vector similarity search using semantic embeddings for intelligent ingredient-emoji matching.</p>
+                    </li>
+                </ul>
+            </section>
         </main>
     </div>
 </body>
