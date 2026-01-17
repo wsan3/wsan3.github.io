@@ -108,6 +108,7 @@ body {
 .social-link svg {
     width: 20px;
     height: 20px;
+    display: block;
 }
 
 .social-link:hover {
@@ -407,12 +408,15 @@ body {
 }
 
 .intro-text a {
-    color: #FF312A;
-    text-decoration: none;
+    color: #FF312A !important;
+    text-decoration: underline;
+    -webkit-tap-highlight-color: rgba(255, 49, 42, 0.2);
 }
 
-.intro-text a:hover {
-    text-decoration: underline;
+.intro-text a:hover,
+.intro-text a:active,
+.intro-text a:visited {
+    color: #FF312A !important;
 }
 
 .feature-list {
@@ -438,12 +442,15 @@ body {
 }
 
 .feature-list a {
-    color: #FF312A;
-    text-decoration: none;
+    color: #FF312A !important;
+    text-decoration: underline;
+    -webkit-tap-highlight-color: rgba(255, 49, 42, 0.2);
 }
 
-.feature-list a:hover {
-    text-decoration: underline;
+.feature-list a:hover,
+.feature-list a:active,
+.feature-list a:visited {
+    color: #FF312A !important;
 }
 
 .project-links {
@@ -596,10 +603,15 @@ body {
         margin-bottom: 0;
     }
 
+    .section-divider {
+        margin: 32px 0;
+    }
+
     .profile-img {
         width: 200px;
         height: 200px;
         margin: 0 auto 24px;
+        display: block;
     }
 
     .name {
