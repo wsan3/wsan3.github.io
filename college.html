@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Work - Win San</title>
+    <title>College Projects - Win San</title>
     
-    <meta property="og:title" content="College Work - Win San">
+    <meta property="og:title" content="College Projects - Win San">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wsan3.github.io/college.html">
+    <meta property="og:description" content="Collection of apps, hackathon projects, and coursework from my time at UW-Madison.">
     <meta property="og:image" content="https://wsan3.github.io/assets/img/profile-480.jpeg">
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
@@ -17,78 +19,120 @@
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <script src="assets/js/scroll-position.js"></script>
+    <script src="assets/js/carousel.js" defer></script>
     <div class="container">
         <main class="main">
-            <a href="index.html" class="back-link">← Back</a>
+            <nav class="breadcrumbs">
+                <a href="index.html" class="breadcrumb-link">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="index.html#projects" class="breadcrumb-link">Projects</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">College Projects</span>
+            </nav>
             
-            <h1 class="detail-title">College Work</h1>
+            <h1 class="detail-title">College Projects</h1>
             
-            <ul class="bullet-list">
-                <li>
-                    <div class="item-header">
-                        <span class="item-date">2023-05-20</span>
-                        <a href="projects/schmoney.html">SchMoney</a>
-                    </div>
-                    <p class="item-description">Financial literacy platform helping students build healthy money habits through gamification and personalized insights.</p>
-                </li>
-                <li>
-                    <div class="item-header">
-                        <span class="item-date">2022-12-10</span>
-                        <a href="projects/ebike.html">Electric Bike Design</a>
-                    </div>
-                    <p class="item-description">Senior capstone project featuring custom power management, motor control, and real-time performance monitoring systems.</p>
-                </li>
-                <li>
-                    <div class="item-header">
-                        <span class="item-date">2022-08-05</span>
-                        <a href="projects/wisconsin-autonomous.html">Wisconsin Autonomous</a>
-                    </div>
-                    <p class="item-description">Developed SLAM algorithms and sensor fusion pipelines for autonomous vehicle localization and path planning.</p>
-                </li>
-                <li>
-                    <div class="item-header">
-                        <span class="item-date">2022-11-12</span>
-                        <a href="projects/wastevision.html">WasteVision - MadHacks</a>
-                    </div>
-                    <p class="item-description">Computer vision system using CNNs to classify recyclable materials in real-time. Built in 24 hours at MadHacks.</p>
-                </li>
-                <li>
-                    <div class="item-header">
-                        <span class="item-date">2021-10-23</span>
-                        <a href="projects/lokal.html">Lokal - CheeseHacks</a>
-                    </div>
-                    <p class="item-description">Marketplace connecting local businesses with community members. Winner at CheeseHacks 2021.</p>
-                </li>
-                <li>
-                    <div class="item-header">
-                        <span class="item-date">2021-09-18</span>
-                        <a href="projects/badgerlf.html">BadgerLF - UPL Hackathon</a>
-                    </div>
-                    <p class="item-description">Campus lost-and-found app with geolocation features and real-time notifications for item matches.</p>
-                </li>
-                <li>
-                    <div class="item-header">
-                        <span class="item-date">2021-05-14</span>
-                        <a href="projects/microcontroller-game.html">Microcontroller Game</a>
-                    </div>
-                    <p class="item-description">Interactive game on MSP432 with custom graphics engine, collision detection, and hardware interrupt handling.</p>
-                </li>
-                <li>
-                    <div class="item-header">
-                        <span class="item-date">2020-11-30</span>
-                        <a href="projects/hci-lab.html">HCI Lab Research</a>
-                    </div>
-                    <p class="item-description">Social robotics research exploring human-robot interaction patterns using Misty robot and emotion detection algorithms.</p>
-                </li>
-                <li>
-                    <div class="item-header">
-                        <span class="item-date">2020-09-26</span>
-                        <a href="projects/slice.html">Slice - WebHacks</a>
-                    </div>
-                    <p class="item-description">Web platform for discovering local food deals with real-time updates and location-based recommendations.</p>
-                </li>
-            </ul>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <img src="assets/img/college/college-1.jpg" alt="College Projects 1" class="carousel-image active">
+                 </div>
+                <div class="carousel-counter">
+                    <button class="carousel-counter-arrow carousel-counter-prev" aria-label="Previous">←</button>
+                    <span class="carousel-counter-text"><span class="carousel-current">1</span> / <span class="carousel-total">3</span></span>
+                    <button class="carousel-counter-arrow carousel-counter-next" aria-label="Next">→</button>
+                </div>
+            </div>
+            
+            <div class="project-intro">
+                <p class="project-date">2019 to 2023</p>
+                <p class="intro-text">Collection of apps, hackathon projects, and coursework from my time at UW-Madison studying Computer Engineering and Computer Science</p>
+                
+                <ul class="feature-list">
+                    <li>Full-stack web and mobile applications</li>
+                    <li>Hackathon competition winners</li>
+                    <li>Hardware and embedded systems projects</li>
+                </ul>
+            </div>
+
+            <hr class="section-divider">
+
+            <section class="content-section">
+                <p class="section-title">Apps</p>
+                <ul class="bullet-list">
+                    <li>
+                        <div class="item-header">
+                            <span class="item-date">September 2021</span>
+                            <a href="https://vimeo.com/607694311" target="_blank">SchMoney</a>
+                        </div>
+                        <p class="item-description">Second hand marketplace for college students to buy and sell items. Built using React Native and Expo.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <hr class="section-divider">
+
+            <section class="content-section">
+                <p class="section-title">Hackathons</p>
+                <ul class="bullet-list">
+                    <li>
+                        <div class="item-header">
+                            <span class="item-date">February 2022</span>
+                            <a href="https://devpost.com/software/badgerlf" target="_blank">BadgerLF - UPL Hackathon</a>
+                        </div>
+                        <p class="item-description">Campus lost-and-found app with geolocation features and real-time notifications for item matches. Won first place.</p>
+                    </li>
+                    <li>
+                        <div class="item-header">
+                            <span class="item-date">February 2022</span>
+                            <a href="https://vimeo.com/679783782" target="_blank">Slice - WebHacks</a>
+                        </div>
+                        <p class="item-description">Expense splitting app that allows users to split bills with friends and family by taking a picture of the receipt.</p>
+                    </li>
+                    <li>
+                        <div class="item-header">
+                            <span class="item-date">October 2021</span>
+                            <a href="https://devpost.com/software/dn-dt6sz7" target="_blank">Lokal - CheeseHacks</a>
+                        </div>
+                        <p class="item-description">Marketplace connecting local businesses with community members. Won first place and $600.</p>
+                    </li>
+                    <li>
+                        <div class="item-header">
+                            <span class="item-date">October 2019</span>
+                            <a href="https://devpost.com/software/garbagevision" target="_blank">WasteVision - MadHacks</a>
+                        </div>
+                        <p class="item-description">Smart waste sorter that takes pictures of waste, classifies it, then sorts it automatically.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <hr class="section-divider">
+
+            <section class="content-section">
+                <p class="section-title">Coursework</p>
+                <ul class="bullet-list">
+                    <li>
+                        <div class="item-header">
+                            <span class="item-date">May 2023</span>
+                            <a href="https://vimeo.com/823529798" target="_blank">Nerf Gun Turret</a>
+                        </div>
+                        <p class="item-description">Built a nerf gun turret for my senior capstone involving PCB design, 3D printing, and microcontroller programming.</p>
+                    </li>
+                    <li>
+                        <div class="item-header">
+                            <span class="item-date">August 2022</span>
+                            <a href="https://vimeo.com/741265311" target="_blank">Electric Bike Design</a>
+                        </div>
+                        <p class="item-description">E-bike controller featuring custom power management, motor control, and real-time performance monitoring systems.</p>
+                    </li>
+                    <li>
+                        <div class="item-header">
+                            <span class="item-date">October 2021</span>
+                            <a href="https://www.youtube.com/watch?v=0b960PwJRGo" target="_blank">Microcontroller Game</a>
+                        </div>
+                        <p class="item-description">Programmed snake game on MSP432 with custom graphics engine, collision detection, and hardware interrupt handling.</p>
+                    </li>
+                </ul>
+            </section>
         </main>
     </div>
 </body>
