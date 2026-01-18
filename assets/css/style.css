@@ -322,10 +322,32 @@ body {
     margin-bottom: 24px;
 }
 
+.detail-content p a {
+    color: #FF312A;
+    text-decoration: none;
+    border-bottom: 1px solid #d0d0d0;
+    transition: border-color 0.2s ease;
+}
+
+.detail-content p a:hover {
+    border-bottom-color: #FF312A;
+}
+
 .detail-content ul {
     margin-bottom: 24px;
     padding-left: 20px;
     list-style-position: outside;
+}
+
+.detail-content ul li a {
+    color: #FF312A;
+    text-decoration: none;
+    border-bottom: 1px solid #d0d0d0;
+    transition: border-color 0.2s ease;
+}
+
+.detail-content ul li a:hover {
+    border-bottom-color: #FF312A;
 }
 
 .detail-content strong {
@@ -488,15 +510,17 @@ body {
 .carousel-container {
     position: relative;
     max-width: 520px;
-    margin: 0 auto 48px;
+    margin: 24px auto 48px;
     overflow: hidden;
 }
 
 .carousel-track {
     position: relative;
     width: 100%;
-    aspect-ratio: 9 / 16;
-    max-height: 600px;
+    aspect-ratio: 1 / 1;
+    max-height: 520px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
 }
 
 .carousel-image {
@@ -507,7 +531,7 @@ body {
     height: 100%;
     object-fit: contain;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .carousel-image.active {

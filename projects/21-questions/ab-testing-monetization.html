@@ -30,39 +30,68 @@
             
             <h1 class="detail-title">A/B Testing & Monetization</h1>
             
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <img src="../../assets/img/21-questions/21-questions-5.png" alt="21 Questions A/B Testing" class="carousel-image active">
+                </div>
+                <div class="carousel-counter">
+                    <button class="carousel-counter-arrow carousel-counter-prev" aria-label="Previous">←</button>
+                    <span class="carousel-counter-text"><span class="carousel-current">1</span> / <span class="carousel-total">1</span></span>
+                    <button class="carousel-counter-arrow carousel-counter-next" aria-label="Next">→</button>
+                </div>
+            </div>
+
             <div class="detail-content" style="font-size: 0.9rem;">
-                <h3>Optimizing Paywalls for 43% MRR Increase</h3>
+                <h3>Finding the right price through experimentation</h3>
                 
                 <p>
-                    Through systematic A/B testing of different paywall designs and subscription models, I increased Monthly Recurring Revenue (MRR) by 43%.
+                    Pricing is part art, part science, and mostly guesswork until you have data. We knew we had a product people enjoyed, but figuring out what they'd actually pay for it? That required testing.
                 </p>
                 
-                <h3>Testing Methodology</h3>
+                <h3>The Power of RevenueCat Experiments</h3>
                 
                 <p>
-                    Implemented controlled experiments testing various paywall configurations:
+                    Our subscription management service, RevenueCat, has an Experiments feature that lets you A/B test different subscription models. We used it to run experiments mixing and matching prices, subscription lengths (weekly, monthly, annual), and free trial periods (3 days free, 1 week free). The goal: maximize lifetime value per customer.
+                </p>
+                
+                <h3>The Breakthrough Test</h3>
+                
+                <p>
+                    We ran our most promising experiment for a month, from August 7 to September 5, 2024 (28 days). The setup:
                 </p>
                 
                 <ul>
-                    <li><strong>Timing</strong> - When to show the paywall (immediately, after X sessions, after specific actions)</li>
-                    <li><strong>Pricing models</strong> - Weekly vs monthly vs annual subscriptions, different price points</li>
-                    <li><strong>Presentation</strong> - Hard vs soft paywalls, different copy and visual designs</li>
-                    <li><strong>Free trial lengths</strong> - 3-day, 7-day, or 14-day trial periods</li>
+                    <li><strong>Variant A (control):</strong> 3-day free trial with $3.99 weekly or $5.99 monthly subscriptions</li>
+                    <li><strong>Variant B:</strong> $9.99 weekly with 3-day free trial</li>
                 </ul>
                 
-                <h3>Key Findings</h3>
+                <p>
+                    The results were eye-opening:
+                </p>
+                
+                <ul>
+                    <li><strong>Variant A:</strong> $1.50 realized LTV per customer</li>
+                    <li><strong>Variant B:</strong> $2.71 realized LTV per customer (+80.67%)</li>
+                </ul>
                 
                 <p>
-                    The winning configuration balanced user experience with conversion optimization. Key insights included optimal paywall timing that maximized conversion without hurting retention, and pricing tiers that aligned with user value perception.
+                    An 80% increase in customer lifetime value from a single pricing change. With concrete metrics in hand, we made the decision to switch from our old subscription model to the new one.
+                </p>
+                
+                <h3>Beyond Pricing</h3>
+                
+                <p>
+                    We also experimented with different paywall UIs to see which designs drove the most engagement. Testing wasn't just about the numbers on the price tag—it was about the entire presentation and user experience.
                 </p>
                 
                 <h3>Impact</h3>
                 
                 <p>
-                    The iterative testing process led to a 43% increase in MRR while maintaining healthy user retention metrics. This data-driven approach to monetization ensured sustainable growth without compromising user experience.
+                    Through this systematic, data-driven approach to monetization, we increased Monthly Recurring Revenue (MRR) by 28% while maintaining healthy retention metrics. The key was balancing conversion optimization with user experience, ensuring sustainable growth without alienating our user base.
                 </p>
             </div>
         </main>
     </div>
+    <script src="../../assets/js/carousel.js"></script>
 </body>
 </html>
