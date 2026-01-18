@@ -18,7 +18,6 @@
     <link href="../../assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <script src="../../assets/js/carousel.js" defer></script>
     <div class="container">
         <main class="main">
             <nav class="breadcrumbs">
@@ -31,31 +30,23 @@
             
             <h1 class="detail-title">LLM Prompt Engineering</h1>
             
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <img src="../../assets/img/chefbooks/chefbooks-1.png" alt="LLM Prompt Engineering" class="carousel-image active">
-                    <img src="../../assets/img/chefbooks/chefbooks-2.png" alt="Recipe extraction" class="carousel-image">
-                </div>
-                <div class="carousel-counter">
-                    <button class="carousel-counter-arrow carousel-counter-prev" aria-label="Previous">←</button>
-                    <span class="carousel-counter-text"><span class="carousel-current">1</span> / <span class="carousel-total">2</span></span>
-                    <button class="carousel-counter-arrow carousel-counter-next" aria-label="Next">→</button>
-                </div>
-            </div>
-            
             <div class="detail-content" style="font-size: 0.9rem;">
-                <h2>Structured Prompt Design for Recipe Extraction</h2>
-                
+                <br>
+              
                 <p>
-                    I designed a structured prompt for recipe extraction with strict JSON schema validation to ensure consistent, machine-readable output.
+                    Getting an LLM to extract recipes consistently is harder than it sounds. Social media recipes are chaos, vague ingredient lists, missing nutrition info, cook times buried in paragraphs, and half the time it's not even a recipe.
                 </p>
                 
                 <p>
-                    The prompt handles several tricky edge cases, including parsing ingredients from free-form text (like "2 tbsp olive oil" or "1 medium onion, diced"), estimating macros when nutrition info isn't provided, inferring prep and cook times from natural language, and filtering out non-recipe content entirely.
+                    I needed the AI to parse "2 tbsp olive oil" and "1 medium onion, diced" into structured data, estimate macros when they're missing, pull cook times from natural language, and skip non-recipe content entirely. All while spitting out clean JSON every time.
                 </p>
                 
                 <p>
-                    To keep outputs consistent across different sources—Instagram captions, YouTube descriptions, and recipe websites—I used few-shot examples and clear constraints.
+                    The fix: a tightly structured prompt with few-shot examples and hard constraints. Show the model what good output looks like, and it'll follow the pattern.
+                </p>
+                
+                <p>
+                    Now it handles Instagram captions, YouTube descriptions, and recipe websites without breaking format. Prompt engineering is just teaching by example at scale.
                 </p>
             </div>
         </main>

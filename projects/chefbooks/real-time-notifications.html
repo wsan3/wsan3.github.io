@@ -18,7 +18,6 @@
     <link href="../../assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <script src="../../assets/js/carousel.js" defer></script>
     <div class="container">
         <main class="main">
             <nav class="breadcrumbs">
@@ -31,35 +30,23 @@
             
             <h1 class="detail-title">Real-Time Recipe Import Notifications</h1>
             
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <img src="../../assets/img/chefbooks/chefbooks-1.png" alt="Real-Time Notifications" class="carousel-image active">
-                    <img src="../../assets/img/chefbooks/chefbooks-2.png" alt="Notification system" class="carousel-image">
-                </div>
-                <div class="carousel-counter">
-                    <button class="carousel-counter-arrow carousel-counter-prev" aria-label="Previous">←</button>
-                    <span class="carousel-counter-text"><span class="carousel-current">1</span> / <span class="carousel-total">2</span></span>
-                    <button class="carousel-counter-arrow carousel-counter-next" aria-label="Next">→</button>
-                </div>
-            </div>
-            
             <div class="detail-content" style="font-size: 0.9rem;">
-                <h2>Hybrid Notification System for Async AI Tasks</h2>
-                
+                <br>
+              
                 <p>
-                    To reliably notify users when AI finishes processing recipes (a 20–60 second async task), I designed a hybrid notification system focused on reliability without draining battery or overloading the database.
+                    Waiting 20–60 seconds for AI to process a recipe feels like forever. Users needed to know when it was done, whether the app was open, backgrounded, or they'd wandered off to check Instagram.
                 </p>
                 
                 <p>
-                    I evaluated several approaches—including database subscriptions, polling, and push notifications—before settling on a hybrid solution. Push notifications act as the primary delivery method, with intelligent polling as a fallback to handle edge cases.
+                    The challenge: deliver notifications reliably without killing battery life or hammering the database with constant requests.
                 </p>
                 
                 <p>
-                    Polling automatically stops as soon as a notification is received, avoiding redundant requests. The system also persists state across app backgrounding using AsyncStorage, ensuring users are notified even if the app is inactive.
+                    I tested a few approaches (database subscriptions, polling, push notifications) and landed on a hybrid system. Push notifications handle the happy path. Smart polling kicks in as a fallback for edge cases, but stops immediately once a push comes through to avoid redundant requests.
                 </p>
                 
                 <p>
-                    This approach balances reliability, efficiency, and battery usage while keeping the user experience seamless.
+                    State persists across app backgrounding using AsyncStorage, so users get notified even if they've left the app. The result: reliable notifications without the battery drain.
                 </p>
             </div>
         </main>

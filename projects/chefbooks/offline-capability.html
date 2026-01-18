@@ -18,7 +18,6 @@
     <link href="../../assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <script src="../../assets/js/carousel.js" defer></script>
     <div class="container">
         <main class="main">
             <nav class="breadcrumbs">
@@ -31,31 +30,23 @@
             
             <h1 class="detail-title">Offline Capability Trade-offs</h1>
             
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <img src="../../assets/img/chefbooks/chefbooks-1.png" alt="Offline capability analysis" class="carousel-image active">
-                    <img src="../../assets/img/chefbooks/chefbooks-2.png" alt="Architecture decision" class="carousel-image">
-                </div>
-                <div class="carousel-counter">
-                    <button class="carousel-counter-arrow carousel-counter-prev" aria-label="Previous">←</button>
-                    <span class="carousel-counter-text"><span class="carousel-current">1</span> / <span class="carousel-total">2</span></span>
-                    <button class="carousel-counter-arrow carousel-counter-next" aria-label="Next">→</button>
-                </div>
-            </div>
-            
             <div class="detail-content" style="font-size: 0.9rem;">
-                <h2>Offline-First Architecture Tradeoffs</h2>
-                
+                <br>
+              
                 <p>
-                    I explored adding offline support using WatermelonDB but ultimately decided to prioritize speed-to-market over a full offline-first architecture.
+                    I almost went down the offline-first rabbit hole with WatermelonDB. It seemed like the "right" way to build a mobile app, until I thought about when people actually use a recipe app.
                 </p>
                 
                 <p>
-                    While offline features can be powerful, they introduce significant complexity—local and remote data sync, conflict resolution, and more state management. For an MVP, that tradeoff didn't make sense, especially given that most recipe app usage happens in connected environments like home or grocery stores with Wi-Fi. Only a small percentage of apps offer truly meaningful offline functionality.
+                    Most of the time, they're at home or in a grocery store. Both have Wi-Fi. Offline support would mean building sync logic, conflict resolution, and a whole layer of state management complexity. For an MVP, that felt like over-engineering.
                 </p>
                 
                 <p>
-                    The key takeaway was that thoughtful feature prioritization matters more than technical perfection. Shipping a focused, reliable product quickly often delivers more value than building complex features most users won't need.
+                    Sure, offline features sound cool. But only a handful of apps actually need them, and I wasn't building one of those apps.
+                </p>
+                
+                <p>
+                    I shipped without it. Ultimately, getting a focused product out quickly beats building features most users will never notice.
                 </p>
             </div>
         </main>

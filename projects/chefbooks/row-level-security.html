@@ -18,7 +18,6 @@
     <link href="../../assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <script src="../../assets/js/carousel.js" defer></script>
     <div class="container">
         <main class="main">
             <nav class="breadcrumbs">
@@ -31,31 +30,23 @@
             
             <h1 class="detail-title">PostgreSQL Row Level Security</h1>
             
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <img src="../../assets/img/chefbooks/chefbooks-1.png" alt="Row Level Security" class="carousel-image active">
-                    <img src="../../assets/img/chefbooks/chefbooks-2.png" alt="Security architecture" class="carousel-image">
-                </div>
-                <div class="carousel-counter">
-                    <button class="carousel-counter-arrow carousel-counter-prev" aria-label="Previous">←</button>
-                    <span class="carousel-counter-text"><span class="carousel-current">1</span> / <span class="carousel-total">2</span></span>
-                    <button class="carousel-counter-arrow carousel-counter-next" aria-label="Next">→</button>
-                </div>
-            </div>
-            
             <div class="detail-content" style="font-size: 0.9rem;">
-                <h2>Database-Level Access Control with Row Level Security</h2>
-                
+                <br>
+              
                 <p>
-                    I implemented fine-grained access control for multi-tenant data using PostgreSQL's Row Level Security (RLS), ensuring users can only access their own recipes at the database level—not just through application logic.
+                    Early on, I had to figure out how to keep users' recipes private. The obvious approach: check permissions in the app code before every query. But what happens when I inevitably mess up and forget a check somewhere?
                 </p>
                 
                 <p>
-                    This adds a strong layer of defense in depth. Even if there's a bug or oversight in the app code, the database still enforces data isolation. It was a valuable lesson in designing secure architectures for serverless environments, where traditional middleware-based authorization doesn't always apply.
+                    PostgreSQL's Row Level Security became my safety net. It enforces access control at the database level, users literally can't query recipes that aren't theirs, even if my app code screws up.
                 </p>
                 
                 <p>
-                    RLS policies automatically scope queries based on the authenticated user context from Supabase JWTs, making access control both secure and transparent to the application code.
+                    Supabase handles the authentication context through JWTs, and RLS policies automatically scope every query to the logged-in user. The app doesn't even know it's happening.
+                </p>
+                
+                <p>
+                    It's defense in depth. Even if there's a bug in my code, the database won't leak data. Turned out to be a good lesson in designing for serverless environments where you can't rely on traditional middleware to catch mistakes.
                 </p>
             </div>
         </main>

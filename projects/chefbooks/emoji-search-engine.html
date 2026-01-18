@@ -18,7 +18,6 @@
     <link href="../../assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <script src="../../assets/js/carousel.js" defer></script>
     <div class="container">
         <main class="main">
             <nav class="breadcrumbs">
@@ -31,31 +30,23 @@
             
             <h1 class="detail-title">Emoji Ingredient Search Engine</h1>
             
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <img src="../../assets/img/chefbooks/chefbooks-1.png" alt="Emoji Search Engine" class="carousel-image active">
-                    <img src="../../assets/img/chefbooks/chefbooks-2.png" alt="Vector similarity" class="carousel-image">
-                </div>
-                <div class="carousel-counter">
-                    <button class="carousel-counter-arrow carousel-counter-prev" aria-label="Previous">←</button>
-                    <span class="carousel-counter-text"><span class="carousel-current">1</span> / <span class="carousel-total">2</span></span>
-                    <button class="carousel-counter-arrow carousel-counter-next" aria-label="Next">→</button>
-                </div>
-            </div>
-            
             <div class="detail-content" style="font-size: 0.9rem;">
-                <h2>Semantic Ingredient-to-Emoji Matching</h2>
-                
+                <br>
+              
                 <p>
-                    I built a vector-based similarity search to match ingredients to emojis using semantic embeddings instead of simple keyword matching.
+                    Recipe lists are easier to scan when ingredients have visual context. The problem: how do you reliably match "tomato" to 🍅, "chicken breast" to 🐔, and "poultry" to the same thing?
                 </p>
                 
                 <p>
-                    Ingredient names are embedded using the gte-small model and stored in Supabase with the pgvector extension. Emoji assets live in Supabase Storage and are retrieved using cosine similarity search.
+                    Keyword matching breaks fast. "Tomato paste" isn't the same as "tomato," and suddenly you're writing endless edge cases.
                 </p>
                 
                 <p>
-                    This setup handles variations naturally—terms like "chicken breast," "chicken thigh," and "poultry" all map to the same chicken emoji. It adds visual context to recipe lists without relying on brittle keyword rules or manual tagging.
+                    I went with semantic embeddings instead. The gte-small model converts ingredient names into vectors, stored in Supabase with pgvector. When a user adds an ingredient, cosine similarity finds the closest emoji match from Apple's default food emojis plus custom ones we generated for ingredients that don't have standard representations.
+                </p>
+                
+                <p>
+                    Now "chicken breast," "chicken thigh," and "poultry" all map to 🐔 without any manual rules. The system understands meaning, not just keywords. Turns out vector search is pretty good at making food look like food.
                 </p>
             </div>
         </main>
