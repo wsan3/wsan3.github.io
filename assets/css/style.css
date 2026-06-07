@@ -89,6 +89,17 @@ body {
     color: #999;
 }
 
+.bio-list li a {
+    color: #FF312A;
+    text-decoration: none;
+    border-bottom: 1px solid #d0d0d0;
+    transition: border-color 0.2s ease;
+}
+
+.bio-list li a:hover {
+    border-bottom-color: #FF312A;
+}
+
 /* Social Links */
 .social-links {
     display: flex;
